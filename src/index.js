@@ -32,9 +32,18 @@ function getimages(d) {
     img.src = small
     div.append(p, img)
     parent.append(div)
+    document.querySelectorAll("div img").forEach(image => {
+      image.onclick = () => {
+        document.querySelector(".popup-image").style.display = "block"
+        document.querySelector(".popup-image img").src =
+          image.getAttribute("src")
+      }
+    })
+    document.querySelector(".popup-image span").onclick = () => {
+      document.querySelector(".popup-image").style.display = "none"
+    }
   })
 }
-
 let appendmain = document.getElementById("data1")
 
 let appendedi = document.getElementById("edi")
@@ -42,7 +51,7 @@ appendedi.addEventListener("click", edit)
 async function edit() {
   appendmain.innerHTML = null
   let getedi = getdata(
-    "https://api.unsplash.com/search/collections?client_id=zUOo2L5vl_8vXn2_ILQbLyIg238RE-HgABzpMjdFIFg&query=Editorial&page=2"
+    "https://api.unsplash.com/search/collections?client_id=zUOo2L5vl_8vXn2_ILQbLyIg238RE-HgABzpMjdFIFg&query=Editorial&page=3"
   )
   getedi.then(res => {
     append(res, appendmain)

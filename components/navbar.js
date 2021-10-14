@@ -32,7 +32,12 @@ function navbar() {
         <a href="#" id="fash">Fashion</a>
       </div>
     </div>
+    <div id="data"></div>
 <div id="data1"></div>
+<div class="popup-image">
+      <span>&times;</span>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtFd1ExC-w6ezJzwqVDfcCB_SYgdt_qcmRusWUb0bC10SL2mks-DZR975xKcIH5GgpDMA&usqp=CAU" alt="">
+    </div>
 `
 }
 export default navbar
